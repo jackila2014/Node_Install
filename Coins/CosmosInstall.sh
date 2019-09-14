@@ -4,13 +4,12 @@
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
-BACKTITLE="Node Install Setup Wizard"
-TITLE="Node Install Setup"
+BACKTITLE="Cosmos Setup Wizard"
+TITLE="Cosmos Install Setup"
 MENU="Choose one of the following coins to install:"
 
-OPTIONS=(1 "Altbet"
-		 2 "Privix"
-		 0 "Exit Script"
+OPTIONS=(1 "Cosmos Full Node"
+		 0 "Exit"
 )
 
 
@@ -28,12 +27,9 @@ case $CHOICE in
 		exit	
 		;;
 
-        1)	# Altbet
-		cd Altbet
-		bash install.sh
+        1)	# Cosmos
+		cd Cosmos
+		bash MainNetFullNode.sh
         ;; 
-		2)	# Privix
-		cd Privix
-		bash install.sh
-        ;;
+
 esac

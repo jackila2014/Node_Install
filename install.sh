@@ -8,8 +8,9 @@ BACKTITLE="Node Install Setup Wizard"
 TITLE="Node Install Setup"
 MENU="Choose one of the following coins to install:"
 
-OPTIONS=(1 "Install Fresh Node"
-		 2 "Update Existing Node"
+OPTIONS=(1 "Install Fresh Master Node"
+		 2 "Update Existing Master Node"
+		 3 "Install Cosmos"
 		 0 "Exit Script"
 )
 
@@ -36,5 +37,10 @@ case $CHOICE in
 		2)	# Update Node
 		cd Coins
 		bash CoinUpdate.sh
+        ;;
+
+		2)	# Cosmos Install
+		cd Coins
+		bash CosmosInstall.sh
         ;;
 esac
