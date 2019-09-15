@@ -10,6 +10,7 @@ MENU="Choose one of the following coins to Update:"
 
 OPTIONS=(1 "Altbet"
 		 2 "Privix"
+		 3 "Vault"
 		 0 "Exit Script"
 )
 
@@ -37,6 +38,12 @@ case $CHOICE in
 		2)	# Privix
 		cd ..
 		cd Coins/Privix
+		bash MasternodeUpdate.sh
+        ;; 
+
+		3)	# Vault
+		cd ..
+		cd Coins/Vault
 		bash MasternodeUpdate.sh
         ;; 
 esac
