@@ -31,22 +31,22 @@ case $CHOICE in
 		;;
 
         1)	# Fresh Install
-		cd Coins
+		cd Scripts
 		bash MasternodeInstall.sh
         ;; 
 
 		2)	# Update Node
-		cd Coins
+		cd Scripts
 		bash MasternodeUpdate.sh
         ;;
 
 		3)	# Cosmos Install
-		cd Coins
+		cd Scripts
 		bash CosmosInstall.sh
         ;;
 
 		4)	# Compile Windows Wallet
-		cd Coins
+		cd Scripts
 		bash CosmosInstall.sh
         ;;
 esac
