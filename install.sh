@@ -47,6 +47,6 @@ case $CHOICE in
 
 		4)	# Compile Windows Wallet
 		cd Scripts
-		bash CosmosInstall.sh
+		bash CompileWindows.sh
         ;;
 esac
