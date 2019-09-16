@@ -1,5 +1,5 @@
 
-![Node Install](https://github.com/MotoAcidic/Node_Install/Graphics/NodeInstall.png)
+![Node Install](https://github.com/MotoAcidic/Node_Install/blob/master/Graphics/NodeInstall.png)
 ### Installation
 As a warning this will take a good amount of time since you will be compiling your own daemon and not using the provided one by the project.
 Run the script and follow the assistant for the coin you wish to install:
