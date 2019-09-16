@@ -1,4 +1,4 @@
 # Currently supported coins
-![Privix Logo](https://www.privix.io/images/weblogosticky.png)
-![Altbet Logo](https://altbet.io/assets/img/logodark.png)
-![Cosmos Logo](https://github.com/cosmos/gaia/raw/master/docs/cosmos-hub-image.jpg)
+![Privix Logo](https://github.com/MotoAcidic/Node_Install/Graphics/Privix.png)
+![Altbet Logo](https://github.com/MotoAcidic/Node_Install/Graphics/Altbet.png)
+![Cosmos Logo](https://github.com/MotoAcidic/Node_Install/Graphics/Cosmos.jpg)
