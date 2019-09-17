@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) 2019 Node_Install. Released under the MIT License.
 
 # Install guide https://medium.com/forbole/a-step-by-step-guide-to-join-cosmos-hub-testnet-e591a3d2cb41
 

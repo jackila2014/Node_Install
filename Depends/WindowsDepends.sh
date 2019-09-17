@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) 2019 Node_Install. Released under the MIT License.
 
 echo Starting the install process.
 echo Checking and installing VPS server prerequisites. Please wait.

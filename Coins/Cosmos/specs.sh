@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) 2019 Node_Install. Released under the MIT License.
 
 ########################################################################################################
 # COPY THIS FILE AND CHANGE ONLY THE SPECS BELOW FOR YOUR COIN                                         #

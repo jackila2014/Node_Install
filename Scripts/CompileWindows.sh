@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 Tfinch. Released under the MIT License.
+# Copyright (c) 2019 Node_Install. Released under the MIT License.
 
 HEIGHT=15
 WIDTH=40
