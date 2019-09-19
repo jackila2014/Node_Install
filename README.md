@@ -1,5 +1,6 @@
-
 ![Node Install](https://github.com/MotoAcidic/Node_Install/blob/master/Graphics/NodeInstall.png)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+
 ## What is Node Install
 Node Install is a collection of Masternode Projects and other projects that allows you to either compile from source for your masternode instance or
 compile from source for your windows exe file. 
