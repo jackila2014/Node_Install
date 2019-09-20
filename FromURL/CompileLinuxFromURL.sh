@@ -28,16 +28,11 @@
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
-BACKTITLE="Node Install Setup Wizard"
-TITLE="Node Install Setup"
-MENU="Choose one of the following coins to install:"
+BACKTITLE="WindowsCompile Wizard"
+TITLE="WindowsCompile Setup"
+MENU="Choose either 64bit or 32bit:"
 
-OPTIONS=(1 "Install Fresh Master Node Already Supported"
-		 2 "Update Existing Master Node Already Supported"
-		 3 "Compile Windows Wallet Already Supported"
-		 4 "Compile a project from Github URL"
-		 5 "Install Cosmos"
-
+OPTIONS=(1 "Ubuntu / Debian Linux"
 		 0 "Exit Script"
 )
 
@@ -56,28 +51,43 @@ case $CHOICE in
 		exit	
 		;;
 
-        1)	# Fresh Install
-		cd Scripts
-		bash MasternodeInstall.sh
-        ;; 
+        1)	# Ubutu / Debian
+###############
+# Colors Keys #
+###############
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
-		2)	# Update Node
-		cd Scripts
-		bash MasternodeUpdate.sh
-        ;;
-		
-		3)	# Compile Windows Wallet
-		cd Scripts
-		bash CompileWindows.sh
-        ;;
+##################
+# Choose Project #
+##################
+  echo -e "Paste the projects github url to compile."
+  read -e URL
 
-		4)	# Compile From URL
-		cd FromURL
-		bash FromURLpick.sh
-        ;;
+###################
+# Install Depends #
+###################
+DEPENDS_PATH="Node_Install/Depends/"
+cd
+cd $DEPENDS_PATH
+bash LinuxDepends.sh
+clear
+echo VPS Server prerequisites installed.
 
-		5)	# Cosmos Install
-		cd Scripts
-		bash CosmosInstall.sh
+
+####################
+# Compile the Coin #
+####################
+cd
+git clone $URL && cd $(basename $_ .git)
+./autogen.sh
+./configure --disable-gui-tests --disable-shared --disable-tests --disable-bench --with-unsupported-ssl --with-libressl --with-gui=qt5
+make
+
+echo "Open up Winscp and connect to you vps that you compile this with. The location of the exe file is located 
+	  CoinCompiled/src/qt/    The exe file will be in the qt folder and has already been striped.
+	  If you need to install winscp you can get it here: https://winscp.net/eng/index.php"
         ;;
 esac
