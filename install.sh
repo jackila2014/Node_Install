@@ -26,12 +26,39 @@
 
 # Check for supported OS to run the install
 if [ -n "$(. /etc/os-release; echo $NAME | grep -i Ubuntu)" -o -n "$(. /etc/os-release; echo $NAME | grep -i Debian)" ]; then
-echo "You are running a supported OS and will procedd to choose what you want to run."
-sleep 15;
+# OS is supported so we go to the menu selection.
 cd Scripts/OS/Ubuntu-Debian/
 bash install.sh
 else
-echo "You are running a non-supported OS and will exit the installer. Current Supported OS are Ubuntu and Debian!"
-sleep 15;
-exit 
+
+HEIGHT=15
+WIDTH=50
+CHOICE_HEIGHT=6
+BACKTITLE="OS Check"
+TITLE="OS Check"
+MENU="You are running an un-supported OS do you want to move forward with using Ubuntu - Debian Installer?"
+
+OPTIONS=(1 "Yes"
+		 2 "No"
+)
+
+CHOICE=$(whiptail --clear\
+		--backtitle "$BACKTITLE" \
+                --title "$TITLE" \
+                --menu "$MENU" \
+                $HEIGHT $WIDTH $CHOICE_HEIGHT \
+                "${OPTIONS[@]}" \
+                2>&1 >/dev/tty)
+clear
+
+case $CHOICE in
+        1) # Install the ubuntu and debian defualt installer
+		cd Scripts/OS/Ubuntu-Debian/
+		bash install.sh
+		;;
+
+		2) # Exit the script
+		exit
+		;;
+esac
 fi
