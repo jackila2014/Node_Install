@@ -28,7 +28,8 @@
 if [ -n "$(. /etc/os-release; echo $NAME | grep -i Ubuntu)" -o -n "$(. /etc/os-release; echo $NAME | grep -i Debian)" ]; then
 echo "You are running a supported OS and will procedd to choose what you want to run."
 sleep 15;
-bash /Scripts/OS/Ubuntu-Debian/install.sh
+cd Scripts/OS/Ubuntu-Debian/
+bash install.sh
 else
 echo "You are running a non-supported OS and will exit the installer. Current Supported OS are Ubuntu and Debian!"
 sleep 15;
