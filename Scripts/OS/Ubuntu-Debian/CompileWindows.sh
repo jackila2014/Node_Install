@@ -55,26 +55,26 @@ case $CHOICE in
 		;;
 
         1)	# Altbet
-		cd ..
-		cd Coins/Altbet
+		cd
+		cd Node_Install/Coins/Altbet
 		bash WindowsCompile.sh
         ;;
 
 		2)	# Privix
-		cd ..
-		cd Coins/Privix
+		cd
+		cd Node_Install/Coins/Privix
 		bash WindowsCompile.sh
         ;;
 
 		3)	# Vault
-		cd ..
-		cd Coins/Vault
+		cd
+		cd Node_Install/Coins/Vault
 		bash WindowsCompile.sh
         ;;
 
 		4)	# Beacon
-		cd ..
-		cd Coins/Beacon
+		cd
+		cd Node_Install/Coins/Beacon
 		bash WindowsCompile.sh
         ;;
 esac

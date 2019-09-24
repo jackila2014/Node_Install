@@ -52,8 +52,8 @@ case $CHOICE in
 		;;
 
         1)	# Cosmos
-		cd ..
-		cd Coins/Cosmos
+		cd
+		cd Node_Install/Coins/Cosmos
 		bash MainNetFullNode.sh
         ;; 
 

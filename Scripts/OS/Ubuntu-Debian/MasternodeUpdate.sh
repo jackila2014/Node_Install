@@ -55,26 +55,26 @@ case $CHOICE in
 		;;
 
         1)	# Altbet
-		cd ..
-		cd Coins/Altbet
+		cd
+		cd Node_Install/Coins/Altbet
 		bash MasternodeUpdate.sh
         ;; 
 
 		2)	# Privix
-		cd ..
-		cd Coins/Privix
+		cd
+		cd Node_Install/Coins/Privix
 		bash MasternodeUpdate.sh
         ;; 
 
 		3)	# Vault
-		cd ..
-		cd Coins/Vault
+		cd
+		cd Node_Install/Coins/Vault
 		bash MasternodeUpdate.sh
         ;; 
 
 		4)	# Beacon
-		cd ..
-		cd Coins/Beacon
+		cd
+		cd Node_Install/Coins/Beacon
 		bash MasternodeUpdate.sh
         ;; 
 esac
