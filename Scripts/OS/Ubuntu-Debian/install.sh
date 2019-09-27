@@ -69,6 +69,8 @@ case $CHOICE in
         ;;
 
 		4)	# Compile From URL
+		cd
+		cd Node_Install/FromURL
 		bash FromURLpick.sh
         ;;
 
