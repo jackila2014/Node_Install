@@ -79,7 +79,7 @@ case $CHOICE in
 		bash CosmosInstall.sh
         ;;
 
-		5)	#NOMP Install
+		6)	#NOMP Install
 		cd
 		cd Node_Install/Pool/NOMP/
 		bash NOMPInstall.sh
