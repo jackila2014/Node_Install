@@ -25,61 +25,12 @@
 # '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
 
 
-HEIGHT=15
-WIDTH=40
-CHOICE_HEIGHT=6
-BACKTITLE="Node Install Setup Wizard"
-TITLE="Node Install Setup"
-MENU="Choose one of the following coins to install:"
+########################################################################################################
+# COPY THIS FILE AND CHANGE ONLY THE SPECS BELOW FOR YOUR COIN                                         #
+# Must use exact repo name: Example github https://github.com/altbet/abet Example repo name: altbet    #
+########################################################################################################
 
-OPTIONS=(1 "Install Fresh Master Node Already Supported"
-		 2 "Update Existing Master Node Already Supported"
-		 3 "Compile Windows Wallet Already Supported"
-		 4 "Compile a project from Github URL"
-		 5 "Install Cosmos"
-		 6 "Install NOMP Pool Server"
-
-		 0 "Exit Script"
-)
-
-
-CHOICE=$(whiptail --clear\
-		--backtitle "$BACKTITLE" \
-                --title "$TITLE" \
-                --menu "$MENU" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
-
-clear
-case $CHOICE in
-        0)  # Exit
-		exit	
-		;;
-
-        1)	# Fresh Install
-		bash MasternodeInstall.sh
-        ;; 
-
-		2)	# Update Node
-		bash MasternodeUpdate.sh
-        ;;
-		
-		3)	# Compile Windows Wallet
-		bash CompileWindows.sh
-        ;;
-
-		4)	# Compile From URL
-		cd
-		cd Node_Install/FromURL
-		bash FromURLpick.sh
-        ;;
-
-		5)	# Cosmos Install
-		bash CosmosInstall.sh
-        ;;
-
-		5)	#NOMP Install
-		bash NOMPInstall.sh
-        ;;
-esac
+REPO_NAME='nomp'
+NOMP=https://github.com/CoinPoolServices/node-open-mining-portal.git nomp
+POOL=https://github.com/CoinPoolServices/node-stratum-pool
+DEPENDS_PATH="Node_Install/Depends/"
