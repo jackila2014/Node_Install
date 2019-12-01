@@ -73,12 +73,7 @@ source ./specs.sh
 	# Install Fail 2 Ban #
 	######################
     # Installing Fail2Ban & UFW
-    output " "
-    output "Some optional installs (Fail2Ban & UFW)"
-    output " "
-    sleep 3
-    
-    
+
     if [[ ("$install_fail2ban" == "y" || "$install_fail2ban" == "Y" || "$install_fail2ban" == "") ]]; then
     sudo aptitude -y install fail2ban
     fi
@@ -150,5 +145,5 @@ source ./specs.sh
 # Head back to selection #
 ##########################
 cd 
-bash Node_Install/Scripts/OS/Ubuntu-Debian/install.sh
-  
+sudo rm -rf Node_Install
+ls
