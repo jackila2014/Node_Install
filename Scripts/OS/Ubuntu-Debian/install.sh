@@ -80,6 +80,8 @@ case $CHOICE in
         ;;
 
 		5)	#NOMP Install
+		cd
+		cd Node_Install/Pool/NOMP/
 		bash NOMPInstall.sh
         ;;
 esac
