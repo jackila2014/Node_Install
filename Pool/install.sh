@@ -24,24 +24,16 @@
 #| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
 # '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
 
-
 HEIGHT=15
-WIDTH=40
+WIDTH=50
 CHOICE_HEIGHT=6
-BACKTITLE="Node Install Setup Wizard"
-TITLE="Node Install Setup"
-MENU="Choose one of the following coins to install:"
+BACKTITLE="Pool Install"
+TITLE="Pool Install"
+MENU="Choose which type of pool you would like to install."
 
-OPTIONS=(1 "Install Fresh Master Node Already Supported"
-		 2 "Update Existing Master Node Already Supported"
-		 3 "Compile Windows Wallet Already Supported"
-		 4 "Compile a project from Github URL"
-		 5 "Install Cosmos"
-		 6 "Install Crypto Pool"
-
-		 0 "Exit Script"
+OPTIONS=(1 "Install NOMP"
+		 2 "Exit"
 )
-
 
 CHOICE=$(whiptail --clear\
 		--backtitle "$BACKTITLE" \
@@ -50,38 +42,16 @@ CHOICE=$(whiptail --clear\
                 $HEIGHT $WIDTH $CHOICE_HEIGHT \
                 "${OPTIONS[@]}" \
                 2>&1 >/dev/tty)
-
 clear
+
 case $CHOICE in
-        0)  # Exit
-		exit	
+        1) # Install NOMP
+		cd Pool/NOMP/
+		bash NOMPInstall.sh
 		;;
 
-        1)	# Fresh Install
-		bash MasternodeInstall.sh
-        ;; 
-
-		2)	# Update Node
-		bash MasternodeUpdate.sh
-        ;;
-		
-		3)	# Compile Windows Wallet
-		bash CompileWindows.sh
-        ;;
-
-		4)	# Compile From URL
-		cd
-		cd Node_Install/FromURL
-		bash FromURLpick.sh
-        ;;
-
-		5)	# Cosmos Install
-		bash CosmosInstall.sh
-        ;;
-
-		6)	#NOMP Install
-		cd
-		cd Node_Install/Pool/
-		bash install.sh
-        ;;
+		2) # Exit the script
+		exit
+		;;
 esac
+fi
