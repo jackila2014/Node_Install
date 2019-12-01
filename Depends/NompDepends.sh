@@ -47,18 +47,18 @@ sudo apt-get install -y libcurl4-openssl-dev pkg-config -y
 sudo apt-get install -y libsasl2-dev -y
 
 #Start installing programs for nomp
-sudo apt-get install python g++ make
-sudo apt-get update
-sudo apt-get install nodejs
-sudo apt-get install npm
-sudo apt-get install nodejs-legacy
+sudo apt-get install python g++ make -y
+sudo apt-get update -y
+sudo apt-get install nodejs -y
+sudo apt-get install npm -y
+sudo apt-get install nodejs-legacy -y
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o install_nvm.sh
 bash install_nvm.sh
 apt install nvm v0.10.36
 nvm ls-remote
 nvm install 0.10.36
-sudo apt-get install build-essential
+sudo apt-get install build-essential -y
 
 #Install Redis
 cd
@@ -66,7 +66,7 @@ cd /usr/src
 wget -c http://download.redis.io/redis-stable.tar.gz
 tar xvzf redis-stable.tar.gz
 cd redis-stable
-make & make install
+make & make install -y
 cd utils
 bash install_server.sh
 

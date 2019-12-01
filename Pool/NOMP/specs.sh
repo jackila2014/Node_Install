@@ -31,6 +31,6 @@
 ########################################################################################################
 
 REPO_NAME='nomp'
-NOMP=https://github.com/CoinPoolServices/node-open-mining-portal.git nomp
+NOMP=https://github.com/CoinPoolServices/node-open-mining-portal
 POOL=https://github.com/CoinPoolServices/node-stratum-pool
 DEPENDS_PATH="Node_Install/Depends/"

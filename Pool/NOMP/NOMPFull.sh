@@ -40,10 +40,6 @@ NC='\033[0m' # No Color
 ############################
 source ./specs.sh
 
-    output " "
-    output "Make sure you double check before hitting enter! Only one shot at these!"
-    output " "
-
     read -e -p "Install Fail2ban? [Y/n] : " install_fail2ban
     read -e -p "Install UFW and configure ports? [Y/n] : " UFW
 
