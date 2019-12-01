@@ -48,6 +48,7 @@ sudo apt-get install -y libsasl2-dev -y
 
 #Start installing programs for nomp
 sudo apt-get install python g++ make -y
+sudo apt-get install libdb5.3++-dev -y
 sudo apt-get update -y
 sudo apt-get install nodejs -y
 sudo apt-get install npm -y

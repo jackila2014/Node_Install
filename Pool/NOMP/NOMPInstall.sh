@@ -141,9 +141,17 @@ source ./specs.sh
     sudo ufw --force enable    
     fi
 
-##########################
-# Head back to selection #
-##########################
+############################
+# Delete Node Install repo #
+############################
 cd 
 sudo rm -rf Node_Install
 ls
+
+##################
+# NPM Updateing  #
+##################
+
+cd node-open-mining-portal
+npm update
+
