@@ -46,7 +46,7 @@ clear
 
 case $CHOICE in
         1) # Install NOMP
-		cd Pool/NOMP/
+		cd NOMP/
 		bash NOMPInstall.sh
 		;;
 
