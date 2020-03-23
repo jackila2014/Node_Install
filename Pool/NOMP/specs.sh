@@ -33,4 +33,5 @@
 REPO_NAME='nomp'
 NOMP=https://github.com/CoinPoolServices/node-open-mining-portal
 POOL=https://github.com/CoinPoolServices/node-stratum-pool
+MULTIHASH=https://github.com/CoinPoolServices/node-multi-hashing
 DEPENDS_PATH="Node_Install/Depends/"

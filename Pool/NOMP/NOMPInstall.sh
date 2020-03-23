@@ -24,9 +24,6 @@
 #| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
 # '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
 
-
-# Install guide https://medium.com/forbole/a-step-by-step-guide-to-join-cosmos-hub-testnet-e591a3d2cb41
-
 ###############
 # Colors Keys #
 ###############
@@ -60,6 +57,14 @@ source ./specs.sh
 
 	cd
 	git clone $NOMP
+
+	##########################
+	# Install Pool MultiHash #
+	##########################
+    # Installing Pool MultiHash
+	
+	cd
+	git clone $MULTIHASH
 
 	#######################
 	# Install Pool Portal #
