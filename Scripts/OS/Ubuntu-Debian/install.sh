@@ -36,8 +36,7 @@ OPTIONS=(1 "Install Fresh Master Node Already Supported"
 		 2 "Update Existing Master Node Already Supported"
 		 3 "Compile Windows Wallet Already Supported"
 		 4 "Compile a project from Github URL"
-		 5 "Install Cosmos"
-		 6 "Install Crypto Pool"
+		 5 "Install Crypto Pool"
 
 		 0 "Exit Script"
 )
@@ -75,11 +74,7 @@ case $CHOICE in
 		bash FromURLpick.sh
         ;;
 
-		5)	# Cosmos Install
-		bash CosmosInstall.sh
-        ;;
-
-		6)	#NOMP Install
+		5)	#Pool Install
 		cd
 		cd Node_Install/Pool/
 		bash install.sh
