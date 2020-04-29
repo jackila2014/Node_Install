@@ -53,8 +53,6 @@ case $CHOICE in
 		;;
 
         1)	# Linux
-		cd ..
-		cd Coins/Altbet
 		bash CompileLinuxFromURL.sh
         ;;
 
