@@ -1,4 +1,3 @@
-  
 #!/bin/bash
 # Copyright (c) 2019 Node_Install. Released under the MIT License.
 
@@ -32,8 +31,10 @@ echo Checking and installing VPS server prerequisites. Please wait.
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt install build-essential libtool autotools-dev automake pkg-config bsdmainutils curl git -y
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y
 sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler -y
 sudo apt update && apt install build-essential checkinstall zlib1g-dev libtemplate-perl -y
+sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler -y
 sudo apt-get install software-properties-common -y
 sudo add-apt-repository ppa:bitcoin/bitcoin -y
 sudo apt-get update -y
@@ -47,30 +48,44 @@ sudo apt-get install -y autoconf g++ make openssl libssl-dev libcurl4-openssl-de
 sudo apt-get install -y libcurl4-openssl-dev pkg-config -y
 sudo apt-get install -y libsasl2-dev -y
 
-#Start installing programs for nomp
-sudo apt-get install python g++ make -y
-sudo apt-get install libdb5.3++-dev -y
-sudo apt-get update -y
-sudo apt-get install nodejs -y
-sudo apt-get install npm -y
-sudo apt-get install nodejs-legacy -y
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh -o install_nvm.sh
-bash install_nvm.sh
-apt install nvm v0.10.36
-nvm ls-remote
-nvm install 0.10.36
-sudo apt-get install build-essential -y
 
-#Install Redis
-cd
-cd /usr/src
-wget -c http://download.redis.io/redis-stable.tar.gz
-tar xvzf redis-stable.tar.gz
-cd redis-stable
-make & make install -y
-cd utils
-bash install_server.sh
+#Start installing ASP.NET Core runtime and .NET Core runtime
+sudo wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb -y
+sudo add-apt-repository universe -y
+sudo apt-get update -y
+sudo apt-get install apt-transport-https -y
+sudo apt-get update -y
+sudo apt-get install dotnet-sdk-3.1 -y
+sudo add-apt-repository universe -y
+sudo apt-get update -y
+sudo apt-get install apt-transport-https -y
+sudo apt-get update -y
+sudo apt-get install dotnet-runtime-3.1 -y
+sudo apt-get -y install dotnet-sdk-2.2 git cmake build-essential libssl-dev pkg-config libboost-all-dev libsodium-dev libzmq5
+
+
+#Installing PostgreSQL
+sudo apt update -y
+sudo apt install postgresql postgresql-contrib -y
+sudo -u postgres psql << EOF
+CREATE DATABASE miningcore;
+create user miningcore with encrypted password 'miningcore';
+ALTER ROLE miningcore REPLICATION;
+ALTER ROLE miningcore Superuser;
+ALTER ROLE miningcore Create role;
+ALTER ROLE miningcore Create DB;
+ALTER ROLE miningcore Bypass RLS;
+EOF
+sudo wget https://raw.githubusercontent.com/coinfoundry/miningcore/master/src/Miningcore/Persistence/Postgres/Scripts/createdb.sql
+sudo -u postgres psql miningcore < 'createdb.sql'
+
+#Create the pool account
+echo Now lets create our user and not use the root account.
+sudo adduser pool
+echo Please input your pool users password you wish to use.
+sudo psswd pool
+usermod -aG sudo pool
 
 #Install Screen
 apt install screen 
