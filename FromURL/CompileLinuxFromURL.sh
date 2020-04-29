@@ -81,7 +81,9 @@ echo VPS Server prerequisites installed.
 # Compile the Coin #
 ####################
 cd
-git clone $URL && cd $(basename $_ .git)
+git clone $URL
+sudo chmod -R 755 $(basename $_ .git)
+cd $(basename $_ .git)
 ./autogen.sh
 ./configure --disable-gui-tests --disable-shared --disable-tests --disable-bench --with-unsupported-ssl --with-libressl --with-gui=qt5
 make
