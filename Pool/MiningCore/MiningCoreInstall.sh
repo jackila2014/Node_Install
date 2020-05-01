@@ -56,8 +56,19 @@ source ./specs.sh
     # Installing Pool Portal
 
 	cd
-	git clone $POOL
+	sudo git clone $CORE
 
+	cd $REPO_NAME
+	dotnet publish -c Release --framework netcoreapp3.1  -o ../../build
+	cd
+
+	sudo apt update
+	sudo apt install apache2
+
+	sudo git clone $UI
+	cd $UI_REPO_NAME
+
+	sudo mv css fonts img js poolconfig webfonts index.html README.md /var/www/html/
 	######################
 	# Install Fail 2 Ban #
 	######################
@@ -77,17 +88,12 @@ source ./specs.sh
     sudo ufw --force enable    
     fi
 
+
+
+
 ############################
 # Delete Node Install repo #
 ############################
 cd 
 sudo rm -rf Node_Install
 ls
-
-##################
-# NPM Updateing  #
-##################
-
-cd node-open-mining-portal
-npm update
-

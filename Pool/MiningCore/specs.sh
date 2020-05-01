@@ -31,5 +31,7 @@
 ########################################################################################################
 
 REPO_NAME='miningcore'
-MININGCORE=https://github.com/akshaynexus/miningcore
+CORE=https://github.com/akshaynexus/miningcore
+UI=https://github.com/minernl/Miningcore.WebUI
+UI_REPO_NAME='Miningcore.WebUI'
 DEPENDS_PATH="Node_Install/Depends/"
