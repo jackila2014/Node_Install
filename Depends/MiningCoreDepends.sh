@@ -63,7 +63,7 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get update -y
 sudo apt-get install dotnet-runtime-3.1 -y
 sudo apt-get -y install dotnet-sdk-2.2 git cmake build-essential libssl-dev pkg-config libboost-all-dev libsodium-dev libzmq5
-
+sudo apt install apache2 -y
 
 #Installing PostgreSQL
 sudo apt update -y
