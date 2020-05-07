@@ -75,7 +75,7 @@ source ./specs.sh
 
 	cd
 	git clone $WEBUI
-	sudo mv -v ~/MiningCore.WebUI/* ~/var/www/html/
+	sudo mv -v ~/MiningCore.WebUI/* /var/www/html/
 	cd
 	sudo rm -rf Miningcore.WebUI
 
