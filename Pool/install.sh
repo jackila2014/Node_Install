@@ -50,7 +50,12 @@ case $CHOICE in
 		bash NOMPInstall.sh
 		;;
 
-		2) # Exit the script
+		2) # MiningCore
+		cd MiningCore/
+		bash MiningCoreInstall.sh
+		;;
+
+		3) # Exit the script
 		exit
 		;;
 esac

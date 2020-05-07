@@ -84,10 +84,9 @@ cd
 sudo rm -rf Node_Install
 ls
 
-##################
-# NPM Updateing  #
-##################
+#################################
+# Move Web UI to Apache folder  #
+#################################
 
-cd node-open-mining-portal
-npm update
-
+sudo mv -v ~/MiningCore.WebUI/* ~/var/www/html/
+cd
