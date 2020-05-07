@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 Node_Install. Released under the MIT License.
+# Copyright (c) 2019 - 2020 Node_Install. Released under the MIT License.
 
 # .-----------------. .----------------.  .----------------.  .----------------.                                                             
 #| .--------------. || .--------------. || .--------------. || .--------------. |                                                            
@@ -50,14 +50,6 @@ source ./specs.sh
 	clear
 	echo MiningCore depends installed.
 
-	#######################
-	# Install Pool Portal #
-	#######################
-    # Installing Pool Portal
-
-	cd
-	git clone $POOL
-
 	######################
 	# Install Fail 2 Ban #
 	######################
@@ -77,16 +69,23 @@ source ./specs.sh
     sudo ufw --force enable    
     fi
 
-############################
-# Delete Node Install repo #
-############################
-cd 
-sudo rm -rf Node_Install
-ls
+	###############################################
+	# Clone into WebUI and Move to Apache folder  #
+	###############################################
 
-#################################
-# Move Web UI to Apache folder  #
-#################################
+	cd
+	git clone $WEBUI
+	sudo mv -v ~/MiningCore.WebUI/* ~/var/www/html/
+	cd
+	sudo rm -rf Miningcore.WebUI
 
-sudo mv -v ~/MiningCore.WebUI/* ~/var/www/html/
-cd
+	#################################################
+	# Move to pool user dir and clone main service  #
+	#################################################
+
+	cd /home/pool/
+	sudo git clone $MININGCORE
+	cd miningcore/src/Miningcore
+	dotnet publish -c Release --framework netcoreapp3.1  -o ../../build
+	sudo bash ./configfile.sh
+	dotnet Miningcore.dll -c config.json

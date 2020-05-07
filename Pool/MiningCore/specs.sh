@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 Node_Install. Released under the MIT License.
+# Copyright (c) 2019 - 2020 Node_Install. Released under the MIT License.
 
 # .-----------------. .----------------.  .----------------.  .----------------.                                                             
 #| .--------------. || .--------------. || .--------------. || .--------------. |                                                            
@@ -32,4 +32,5 @@
 
 REPO_NAME='miningcore'
 MININGCORE=https://github.com/akshaynexus/miningcore
+WEBUI=https://github.com/minernl/Miningcore.WebUI
 DEPENDS_PATH="Node_Install/Depends/"
