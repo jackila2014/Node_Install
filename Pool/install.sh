@@ -32,7 +32,8 @@ TITLE="Pool Install"
 MENU="Choose which type of pool you would like to install."
 
 OPTIONS=(1 "Install NOMP"
-		 2 "Exit"
+		 2 "MiningCore"
+		 3 "Exit"
 )
 
 CHOICE=$(whiptail --clear\
