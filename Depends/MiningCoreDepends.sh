@@ -51,26 +51,26 @@ sudo apt-get install libsasl2-dev -y
 
 #Start installing ASP.NET Core runtime and .NET Core runtime
 sudo wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb -y
-sudo add-apt-repository universe -y
+sudo dpkg -i packages-microsoft-prod.deb
+sudo add-apt-repository universe
 sudo apt-get update -y
-sudo apt-get install apt-transport-https -y
+sudo apt-get install apt-transport-https
 sudo apt-get update -y
-sudo apt-get install dotnet-sdk-3.1 -y
+sudo apt-get install dotnet-sdk-3.1
 
 #Install the ASP.NET Core runtime
-sudo add-apt-repository universe -y
+sudo add-apt-repository universe
 sudo apt-get update -y
-sudo apt-get install apt-transport-https -y
+sudo apt-get install apt-transport-https
 sudo apt-get update -y
-sudo apt-get install aspnetcore-runtime-3.1 -y
+sudo apt-get install aspnetcore-runtime-3.1
 
 #Install the .NET Core runtime
-sudo add-apt-repository universe -y
+sudo add-apt-repository universe
 sudo apt-get update -y
-sudo apt-get install apt-transport-https -y
+sudo apt-get install apt-transport-https
 sudo apt-get update -y
-sudo apt-get install dotnet-runtime-3.1 -y
+sudo apt-get install dotnet-runtime-3.1
 
 #Install Apache2
 sudo apt install apache2 -y
