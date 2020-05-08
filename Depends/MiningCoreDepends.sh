@@ -44,9 +44,9 @@ sudo apt-get install libzmq3-dev -y
 sudo apt-get install libminiupnpc-dev -y
 sudo apt-get install libgmp3-dev libevent-dev bsdmainutils libboost-all-dev openssl -y
 sudo apt-get install libssl1.0-dev -y
-sudo apt-get install -y autoconf g++ make openssl libssl-dev libcurl4-openssl-dev -y
-sudo apt-get install -y libcurl4-openssl-dev pkg-config -y
-sudo apt-get install -y libsasl2-dev -y
+sudo apt-get install autoconf g++ make openssl libssl-dev libcurl4-openssl-dev -y
+sudo apt-get install libcurl4-openssl-dev pkg-config -y
+sudo apt-get install libsasl2-dev -y
 
 
 #Start installing ASP.NET Core runtime and .NET Core runtime
