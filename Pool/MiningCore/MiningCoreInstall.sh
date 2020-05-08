@@ -65,4 +65,7 @@ source ./specs.sh
 	cd miningcore/src/Miningcore
 	dotnet publish -c Release --framework netcoreapp3.1  -o ../../build
 	sudo bash ./configfile.sh
+	cd
+	sudo chmod -R 755 miningcore
+	cd miningcore/src/Miningcore
 	dotnet Miningcore.dll -c config.json

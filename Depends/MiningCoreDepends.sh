@@ -57,13 +57,25 @@ sudo apt-get update -y
 sudo apt-get install apt-transport-https -y
 sudo apt-get update -y
 sudo apt-get install dotnet-sdk-3.1 -y
+
+#Install the ASP.NET Core runtime
+sudo add-apt-repository universe -y
+sudo apt-get update -y
+sudo apt-get install apt-transport-https -y
+sudo apt-get update -y
+sudo apt-get install aspnetcore-runtime-3.1 -y
+
+#Install the .NET Core runtime
 sudo add-apt-repository universe -y
 sudo apt-get update -y
 sudo apt-get install apt-transport-https -y
 sudo apt-get update -y
 sudo apt-get install dotnet-runtime-3.1 -y
-sudo apt-get -y install dotnet-sdk-2.2 git cmake build-essential libssl-dev pkg-config libboost-all-dev libsodium-dev libzmq5
+
+#Install Apache2
 sudo apt install apache2 -y
+
+#Install Fail2ban and UFW
 sudo aptitude -y install fail2ban
 sudo apt-get install ufw
 sudo ufw default deny incoming
