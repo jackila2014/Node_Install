@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 Node_Install. Released under the MIT License.
+# Copyright (c) 2019 - 2020 Node_Install. Released under the MIT License.
 
 # .-----------------. .----------------.  .----------------.  .----------------.                                                             
 #| .--------------. || .--------------. || .--------------. || .--------------. |                                                            
@@ -63,7 +63,15 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get update -y
 sudo apt-get install dotnet-runtime-3.1 -y
 sudo apt-get -y install dotnet-sdk-2.2 git cmake build-essential libssl-dev pkg-config libboost-all-dev libsodium-dev libzmq5
-
+sudo apt install apache2 -y
+sudo aptitude -y install fail2ban
+sudo apt-get install ufw
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw --force enable  
 
 #Installing PostgreSQL
 sudo apt update -y

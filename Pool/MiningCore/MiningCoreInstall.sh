@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 Node_Install. Released under the MIT License.
+# Copyright (c) 2019 - 2020 Node_Install. Released under the MIT License.
 
 # .-----------------. .----------------.  .----------------.  .----------------.                                                             
 #| .--------------. || .--------------. || .--------------. || .--------------. |                                                            
@@ -37,10 +37,6 @@ NC='\033[0m' # No Color
 ############################
 source ./specs.sh
 
-    read -e -p "Install Fail2ban? [Y/n] : " install_fail2ban
-    read -e -p "Install UFW and configure ports? [Y/n] : " UFW
-
-
 	###################
 	# Install Depends #
 	###################
@@ -50,50 +46,23 @@ source ./specs.sh
 	clear
 	echo MiningCore depends installed.
 
-	#######################
-	# Install Pool Portal #
-	#######################
-    # Installing Pool Portal
+	###############################################
+	# Clone into WebUI and Move to Apache folder  #
+	###############################################
 
 	cd
-	sudo git clone $CORE
+	git clone $WEBUI
+	sudo mv -v ~/MiningCore.WebUI/* /var/www/html/
+	cd
+	sudo rm -rf Miningcore.WebUI
 
-	cd $REPO_NAME
+	#################################################
+	# Move to pool user dir and clone main service  #
+	#################################################
+
+	cd /home/pool/
+	sudo git clone $MININGCORE
+	cd miningcore/src/Miningcore
 	dotnet publish -c Release --framework netcoreapp3.1  -o ../../build
-	cd
-
-	sudo apt update
-	sudo apt install apache2
-
-	sudo git clone $UI
-	cd $UI_REPO_NAME
-
-	sudo mv css fonts img js poolconfig webfonts index.html README.md /var/www/html/
-	######################
-	# Install Fail 2 Ban #
-	######################
-    # Installing Fail2Ban & UFW
-
-    if [[ ("$install_fail2ban" == "y" || "$install_fail2ban" == "Y" || "$install_fail2ban" == "") ]]; then
-    sudo aptitude -y install fail2ban
-    fi
-    if [[ ("$UFW" == "y" || "$UFW" == "Y" || "$UFW" == "") ]]; then
-    sudo apt-get install ufw
-    sudo ufw default deny incoming
-    sudo ufw default allow outgoing
-    sudo ufw allow ssh
-    sudo ufw allow http
-    sudo ufw allow https
-    sudo ufw allow 3333/tcp
-    sudo ufw --force enable    
-    fi
-
-
-
-
-############################
-# Delete Node Install repo #
-############################
-cd 
-sudo rm -rf Node_Install
-ls
+	sudo bash ./configfile.sh
+	dotnet Miningcore.dll -c config.json

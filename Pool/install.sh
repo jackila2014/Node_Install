@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 Node_Install. Released under the MIT License.
+# Copyright (c) 2019 - 2020 Node_Install. Released under the MIT License.
 
 # .-----------------. .----------------.  .----------------.  .----------------.                                                             
 #| .--------------. || .--------------. || .--------------. || .--------------. |                                                            
@@ -32,7 +32,8 @@ TITLE="Pool Install"
 MENU="Choose which type of pool you would like to install."
 
 OPTIONS=(1 "Install NOMP"
-		 2 "Exit"
+		 2 "MiningCore"
+		 3 "Exit"
 )
 
 CHOICE=$(whiptail --clear\
@@ -50,7 +51,12 @@ case $CHOICE in
 		bash NOMPInstall.sh
 		;;
 
-		2) # Exit the script
+		2) # MiningCore
+		cd MiningCore/
+		bash MiningCoreInstall.sh
+		;;
+
+		3) # Exit the script
 		exit
 		;;
 esac
