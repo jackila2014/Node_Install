@@ -30,7 +30,7 @@ cat << "EOF"
 
 EOF
 echo "$(tput sgr0)$(tput setaf 3)Have fun, this is crypto after all!$(tput sgr0)"
-echo "$(tput setaf 6)Donations (BTC): 1MaxQQxJjnrxxfVvPncb2wsVpTKQu1drH7"
+echo "$(tput setaf 6)Donations (BTC): 3LBktY7jpWGyuJHG2Gtbu5AWTiUrMC9wvk"
 }
 
 ###############

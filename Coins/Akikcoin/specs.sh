@@ -25,38 +25,61 @@
 # '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
 
 
-###############
-# Colors Keys #
-###############
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-NC='\033[0m' # No Color
+########################################################################################################
+# COPY THIS FILE AND CHANGE ONLY THE SPECS BELOW FOR YOUR COIN                                         #
+# Must use exact repo name: Example github https://github.com/altbet/abet Example repo name: altbet    #
+########################################################################################################
 
-############################
-# Bring in the coins specs #
-############################
-source ./specs.sh
+RPC_PORT=19533
+COIN_PORT=19532
+COIN_NAME='Akikcoin'
+REPO_NAME='akikcoin'
+COIN_DAEMON='akikcoind'
+COIN_CLI='akikcoin-cli'
+COIN_QT='akikcoin-qt'
+GITHUB=https://github.com/akikblockchain
+ADDNODE='
+addnode=95.216.32.169
+addnode=95.217.140.129
+addnode=95.217.140.130
+addnode=95.217.140.131
+addnode=95.217.140.132
+addnode=95.217.140.133
+addnode=95.217.140.134
+addnode=95.217.140.135
+addnode=95.217.140.136
+addnode=136.144.171.201
+addnode=94.237.3.163
+addnode=149.28.141.28
+addnode=95.217.140.128
+addnode=45.77.41.234
+addnode=49.12.124.118
+addnode=95.216.32.169:19532
+addnode=95.217.140.129:19532
+addnode=95.217.140.130:19532
+addnode=95.217.140.131:19532
+addnode=95.217.140.132:19532
+addnode=95.217.140.133:19532
+addnode=95.217.140.134:19532
+addnode=95.217.140.135:19532
+addnode=95.217.140.136:19532
+addnode=136.144.171.201:19532
+addnode=94.237.3.163:19532
+addnode=149.28.141.28:19532
+addnode=95.217.140.128:19532
+addnode=45.77.41.234:19532
+'
 
-####################
-# Update the Coin  #
-####################
-killall -9 $COIN_DAEMON
-cd
-cd $REPO_NAME
-git stash
-git pull
-cd
-sudo chmod -R 755 $REPO_NAME
-cd $REPO_NAME
-./autogen.sh
-./configure --disable-gui-tests --disable-shared --disable-tests --disable-bench --with-unsupported-ssl --with-libressl --with-gui=qt5
-make
-cd
+########################################
+# DO NOT CHANGE BELOW STATIC VARIABLES #
+########################################
 
-##################
-# Run the daemon #
-##################
-$DAEMON
+COIN_PATH=/root/.$REPO_NAME
+DAEMON=$REPO_NAME/src/$COIN_DAEMON
+CLI=$REPO_NAME/src/$COIN_CLI
 
-watch $CLI getinfo
+DEPENDS_PATH="Node_Install/Depends/"
+DEPENDS_SCRIPT="install.sh"
+EXTIP=`curl -s4 icanhazip.com`
+RPCUSER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+RPCPASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)

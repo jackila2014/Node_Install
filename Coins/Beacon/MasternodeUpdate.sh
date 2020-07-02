@@ -41,7 +41,7 @@ source ./specs.sh
 ####################
 # Update the Coin  #
 ####################
-killall -9 altbetd
+killall -9 $COIN_DAEMON
 cd
 cd $REPO_NAME
 git stash
