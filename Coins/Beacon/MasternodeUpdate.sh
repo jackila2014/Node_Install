@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 Node_Install. Released under the MIT License.
+# Copyright (c) 2019 - 2020 Node_Install. Released under the MIT License.
 
 # .-----------------. .----------------.  .----------------.  .----------------.                                                             
 #| .--------------. || .--------------. || .--------------. || .--------------. |                                                            
@@ -41,7 +41,7 @@ source ./specs.sh
 ####################
 # Update the Coin  #
 ####################
-killall -9 altbetd
+killall -9 $COIN_DAEMON
 cd
 cd $REPO_NAME
 git stash

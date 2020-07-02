@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 Node_Install. Released under the MIT License.
+# Copyright (c) 2019 - 2020 Node_Install. Released under the MIT License.
 
 # .-----------------. .----------------.  .----------------.  .----------------.                                                             
 #| .--------------. || .--------------. || .--------------. || .--------------. |                                                            
@@ -33,9 +33,8 @@ TITLE="Node Install Setup"
 MENU="Choose one of the following coins to install:"
 
 OPTIONS=(1 "Altbet"
-		 2 "Privix"
-		 3 "Vault"
-		 4 "Beacon"
+		 2 "Vault"
+		 3 "Beacon"
 		 0 "Exit Script"
 )
 

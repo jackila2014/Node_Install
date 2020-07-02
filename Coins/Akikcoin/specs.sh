@@ -30,31 +30,44 @@
 # Must use exact repo name: Example github https://github.com/altbet/abet Example repo name: altbet    #
 ########################################################################################################
 
-RPC_PORT=9322
-COIN_PORT=8322
-COIN_NAME='Altbet'
-REPO_NAME='abet'
-COIN_DAEMON='altbetd'
-COIN_CLI='altbet-cli'
-COIN_QT='altbet-qt'
-GITHUB=https://github.com/altbet/abet
+RPC_PORT=19533
+COIN_PORT=19532
+COIN_NAME='Akikcoin'
+REPO_NAME='akikcoin'
+COIN_DAEMON='akikcoind'
+COIN_CLI='akikcoin-cli'
+COIN_QT='akikcoin-qt'
+GITHUB=https://github.com/akikblockchain
 ADDNODE='
-addnode = 164.68.105.186:8322
-addnode = 93.104.208.36:8322
-addnode = 167.114.39.151:8322
-addnode = 45.77.202.35:8322
-addnode = 217.69.13.180:8322
-addnode = 176.9.175.161:8322
-addnode = 45.76.11.89:8322
-addnode = 108.61.193.195:8322
-addnode = 116.203.176.91:8322
-addnode = 167.86.97.11:8322
-addnode = 95.217.48.241:8322
-addnode = 78.141.218.19:8322
-addnode = 3.14.132.155:8322
-addnode = 95.216.123.33:8322
-addnode = 213.136.92.19:8322
-addnode = 188.40.174.101:8322
+addnode=95.216.32.169
+addnode=95.217.140.129
+addnode=95.217.140.130
+addnode=95.217.140.131
+addnode=95.217.140.132
+addnode=95.217.140.133
+addnode=95.217.140.134
+addnode=95.217.140.135
+addnode=95.217.140.136
+addnode=136.144.171.201
+addnode=94.237.3.163
+addnode=149.28.141.28
+addnode=95.217.140.128
+addnode=45.77.41.234
+addnode=49.12.124.118
+addnode=95.216.32.169:19532
+addnode=95.217.140.129:19532
+addnode=95.217.140.130:19532
+addnode=95.217.140.131:19532
+addnode=95.217.140.132:19532
+addnode=95.217.140.133:19532
+addnode=95.217.140.134:19532
+addnode=95.217.140.135:19532
+addnode=95.217.140.136:19532
+addnode=136.144.171.201:19532
+addnode=94.237.3.163:19532
+addnode=149.28.141.28:19532
+addnode=95.217.140.128:19532
+addnode=45.77.41.234:19532
 '
 
 ########################################

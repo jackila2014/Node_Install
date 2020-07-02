@@ -24,49 +24,48 @@
 #| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
 # '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
 
+###############
+# Colors Keys #
+###############
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
-########################################################################################################
-# COPY THIS FILE AND CHANGE ONLY THE SPECS BELOW FOR YOUR COIN                                         #
-# Must use exact repo name: Example github https://github.com/altbet/abet Example repo name: altbet    #
-########################################################################################################
+############################
+# Bring in the coins specs #
+############################
+source ./specs.sh
 
-RPC_PORT=9322
-COIN_PORT=8322
-COIN_NAME='Altbet'
-REPO_NAME='abet'
-COIN_DAEMON='altbetd'
-COIN_CLI='altbet-cli'
-COIN_QT='altbet-qt'
-GITHUB=https://github.com/altbet/abet
-ADDNODE='
-addnode = 164.68.105.186:8322
-addnode = 93.104.208.36:8322
-addnode = 167.114.39.151:8322
-addnode = 45.77.202.35:8322
-addnode = 217.69.13.180:8322
-addnode = 176.9.175.161:8322
-addnode = 45.76.11.89:8322
-addnode = 108.61.193.195:8322
-addnode = 116.203.176.91:8322
-addnode = 167.86.97.11:8322
-addnode = 95.217.48.241:8322
-addnode = 78.141.218.19:8322
-addnode = 3.14.132.155:8322
-addnode = 95.216.123.33:8322
-addnode = 213.136.92.19:8322
-addnode = 188.40.174.101:8322
-'
+	###################
+	# Install Depends #
+	###################
+	cd
+	cd $DEPENDS_PATH
+	bash MiningCoreDepends.sh
+	clear
+	echo MiningCore depends installed.
 
-########################################
-# DO NOT CHANGE BELOW STATIC VARIABLES #
-########################################
+	###############################################
+	# Clone into WebUI and Move to Apache folder  #
+	###############################################
 
-COIN_PATH=/root/.$REPO_NAME
-DAEMON=$REPO_NAME/src/$COIN_DAEMON
-CLI=$REPO_NAME/src/$COIN_CLI
+	cd
+	git clone $WEBUI
+	sudo mv -v ~/MiningCore.WebUI/* /var/www/html/
+	cd
+	sudo rm -rf Miningcore.WebUI
 
-DEPENDS_PATH="Node_Install/Depends/"
-DEPENDS_SCRIPT="install.sh"
-EXTIP=`curl -s4 icanhazip.com`
-RPCUSER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
-RPCPASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+	#################################################
+	# Move to pool user dir and clone main service  #
+	#################################################
+
+	cd /home/pool/
+	sudo git clone $MININGCORE
+	cd miningcore/src/Miningcore
+	dotnet publish -c Release --framework netcoreapp3.1  -o ../../build
+	sudo bash ./configfile.sh
+	cd
+	sudo chmod -R 755 miningcore
+	cd miningcore/src/Miningcore
+	dotnet Miningcore.dll -c config.json

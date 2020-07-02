@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright (c) 2019 Node_Install. Released under the MIT License.
+# Copyright (c) 2019 - 2020 Node_Install. Released under the MIT License.
 
 # .-----------------. .----------------.  .----------------.  .----------------.                                                             
 #| .--------------. || .--------------. || .--------------. || .--------------. |                                                            
@@ -31,7 +31,7 @@
 ########################################################################################################
 
 REPO_NAME='nomp'
-NOMP=https://github.com/CoinPoolServices/node-open-mining-portal
+NOMP=https://github.com/CoinPoolServices/easyNOMP
 POOL=https://github.com/CoinPoolServices/node-stratum-pool
 MULTIHASH=https://github.com/CoinPoolServices/node-multi-hashing
 DEPENDS_PATH="Node_Install/Depends/"
