@@ -68,5 +68,9 @@ All Supported projects can be found in the Documentation folder as well.
 BTC  3LBktY7jpWGyuJHG2Gtbu5AWTiUrMC9wvk
 ```
 
+![TFinch's github stats](https://github-readme-stats.vercel.app/api?username=MotoAcidic&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
+
+
 Feel free to use my reflink to signup and receive a bonus w/ vultr:
+
 <a href="https://www.vultr.com/?ref=6903922"><img src="https://www.vultr.com/media/banner_2.png" width="468" height="60"></a>
