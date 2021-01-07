@@ -64,8 +64,8 @@ source ./specs.sh
 	sudo git clone $MININGCORE
 	cd miningcore/src/Miningcore
 	dotnet publish -c Release --framework netcoreapp3.1  -o ../../build
-	sudo bash ./configfile.sh
+	sudo bash ~/Node_Install/Pool/MiningCore/configfile.sh
 	cd
-	sudo chmod -R 755 miningcore
+	sudo chmod -R 755 /home/pool/miningcore
 	cd miningcore/src/Miningcore
 	dotnet Miningcore.dll -c config.json
